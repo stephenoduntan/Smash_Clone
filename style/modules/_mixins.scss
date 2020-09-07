@@ -76,15 +76,18 @@
 }
 @mixin art{
     display: grid;
+    position: relative;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template: ". top_article_head top-article--head"
+                    "first-article second-article third-article";
 }
 @mixin top_article_head {
-    text-align: center;
     position: absolute;
-    margin: 19px 0px 0px 670px;
-    width: 30%;
     display: grid;
+    grid-area: top_article_head;
     justify-items: center;
+    justify-self: center;
     z-index: 7;
 }
 @mixin article_btn($width, $height, $bg_color, $color, $font-size, $font-weight) {
@@ -112,22 +115,26 @@
 
 //Lastest Posts
 @mixin posts {
-    display: flex;
-    flex-wrap: wrap; 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template: "article-1 article-2 article-3 ."
+                    "post-ad--1 post-ad--1 article-4 article-5"
+                    "article-6 article-7 post-ad--2 post-ad--2";
     padding: 10px 50px;
 }
 @mixin post-article{
     display: grid;
     align-content: space-between;
     z-index: 10;
-    width: 29.875em;
+    //width: 29.875em;
     margin: 20px 0px 50px 0px;
 }
 @mixin post-ad {
     text-align: center;
     background-color: $masthead_bg;
-    width: 49.125em;
-    max-width: 59.5em;
+    //width: 49.125em;
+    //max-width: 59.5em;
     max-height: 43.313em;
     padding: 30px;
     margin-bottom: 15px;
