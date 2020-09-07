@@ -143,7 +143,6 @@ body {
   position: absolute;
   display: -ms-grid;
   display: grid;
-  grid-area: top_article_head;
   justify-items: center;
   -ms-grid-column-align: center;
       justify-self: center;
@@ -165,7 +164,6 @@ body {
   position: absolute;
   right: 47px;
   margin-top: 49px;
-  grid-area: top-article--btn;
 }
 
 .top-article .top-article--btn button {

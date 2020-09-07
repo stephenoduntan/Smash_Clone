@@ -92,7 +92,7 @@ body {
         position: absolute;
         right: 47px;
         margin-top: 49px;
-        grid-area: top-article--btn;
+        //grid-area: top-article--btn;
 
         button{
             @include article_btn(168px, 40px, $top-article, $white, 19px, $bold);

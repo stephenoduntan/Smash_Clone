@@ -85,7 +85,7 @@
 @mixin top_article_head {
     position: absolute;
     display: grid;
-    grid-area: top_article_head;
+    //grid-area: top_article_head;
     justify-items: center;
     justify-self: center;
     z-index: 7;
