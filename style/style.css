@@ -866,6 +866,10 @@ body {
   font-size: xx-large;
 }
 
+.page-footer .footer-links li a:hover {
+  color: #BC3428;
+}
+
 .page-footer .footer-note {
   line-height: 2;
   padding: 20px 0px;

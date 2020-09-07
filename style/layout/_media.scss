@@ -656,6 +656,9 @@ body {
                     color: $nav_bg;
                     font-size: xx-large;
                 }
+                &:hover{
+                    color: $top-article;
+                }
             }
         }
     }
