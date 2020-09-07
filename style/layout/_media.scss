@@ -1,0 +1,684 @@
+body {
+    font-family: $font;
+    background: $body_color;
+    margin: 0;
+}
+.see-more{
+    text-align: center;
+    padding: 3.125em 0px 7.25em 0px;
+    
+    span{
+        font-size: small;
+        border-bottom: 4px solid $masthead_bg;
+        padding: 15px 0px 10px;
+        letter-spacing: 3px;
+        cursor: pointer;
+
+        &:hover{
+            color: $masthead_bg;
+        }
+    }
+}
+.tag{
+    @include tag;
+}
+.avatar{
+    @include top_article_avatar;
+
+    &:hover{
+        transform: none;
+    }
+}
+
+//Header
+.masthead{
+    @include masthead;
+
+    .logo{
+        grid-area: logo;
+    }
+
+    nav{
+        @include masthead_nav;
+
+        li{
+            @include nav_li;
+
+            a{
+                @include nav_links;
+
+                &:hover{
+                    background-color: $nav_bg;
+                    border-radius: 10px;
+                }
+            }
+
+            .more{
+                background-color: #b13328;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .search-input{
+        grid-area: search-input;
+
+        input{
+            @include search_input;
+        }
+    }
+}
+
+//Top Article
+.top-article{
+    @include top_article;
+
+    .top-article--head{
+        @include top_article_head;
+        
+        h1{
+            font-size: 39px;
+            background-color: $white;
+            padding: 10px 20px;
+        }
+
+        .break{
+            width: 25%;
+            margin-top: -33px;
+        }
+    }
+
+    .top-article--btn{
+        position: absolute;
+        right: 47px;
+        margin-top: 49px;
+
+        button{
+            @include article_btn(168px, 40px, $top-article, $white, 19px, $bold);
+
+            &:hover{
+                background-color: $white;
+                color: $top-article;
+            }
+        }
+    }
+
+    .art{
+        @include art;    
+
+        .top-art{
+            padding: 0px 20px;
+            height: 100vh;
+            color: $white;
+            position: relative;
+            margin: 50% 8% 0;
+
+            .article-author{
+                display: inline-flex;
+
+                h5{
+                    font-size: 25px;
+
+                    em{
+                        font-weight: $light;
+                    }
+                }
+
+            }
+
+            .article-title{
+                h2{
+                    font-size: 40px;
+                }
+                p{
+                    font-size: large;
+                    font-weight: $semi_bold;
+                }
+            }
+
+            .feedback{
+                display: flex;
+                flex-wrap: wrap;
+                font-size: large;
+                font-weight: $bold;
+                
+                li{
+                    list-style: none;
+                    margin-right: 20px;
+
+                    &::before{
+                        content: '#';
+                        color: #61140F;
+                        padding-right: 5px;
+                    }
+                }
+            }
+        }
+
+        .second-article{
+            background-color: #C7372A;
+            height: 100vh !important;
+        }
+
+        .read-arrow{
+            margin-top: 30%;
+
+            a{
+                color: $white;
+                text-decoration: none;
+                font-size: xx-large;
+            }
+        }
+    }
+}
+
+.lastest-post{
+    .posts{
+        @include posts;
+
+        .article-1{
+            order: -3;
+        }
+        .article-2{
+            order: -2;
+        }
+        .article-3{
+            order: -1;
+        }
+        .article-4{
+            order: 1;
+        }
+        .article-5{
+            order: 2;
+        }
+        .article-6{
+            order: 3;
+        }
+        .article-7{
+            order: 4;
+        }
+        .post-ad--1{
+            order: 0;
+        }
+        .post-ad--2{
+            order: 5;
+        }
+
+        .post-article{
+            @include post-article;
+
+            &:hover{
+                background-color: $white;
+                transform: scale(1.075);
+                z-index: 13;
+                transition: 0.3s ease-in-out;
+
+                
+                .post-arrow{
+                    a{
+                        background-color: $hover_arrow;
+                        color: $white;
+                    }
+                }
+            }           
+
+            .days{
+                font-weight: $light;
+                color: $news_text;
+                padding: 0px 40px;
+            }
+            header{
+                padding: 0px 42px;
+
+                h4{
+                    font-size: x-large;
+                    color: $news_title;
+                    text-decoration: underline;
+                    cursor: pointer;
+
+                    &:hover{
+                        color: #BC3428;
+                    }
+                }
+                small{
+                    font-size: large;
+                    color: $news_author;
+                    font-weight: $bold;
+
+                    a{
+                        color: $news_author;
+                        
+                        &:hover{
+                            color: $black;
+                        }
+                    }
+                }
+            }
+            .post{
+                font-size: large;
+                color: $news_text;
+                padding: 20px 40px 100px 50px;
+                line-height: 1.5;
+
+            }
+            .post-arrow{
+                margin: 21px 0px;
+
+                a{
+                    color: $masthead_bg;
+                    text-decoration: none;
+                    font-size: xx-large;
+                    padding: 25px 40px;
+                }
+                
+            }
+        }
+
+        .post-ad--1, .post-ad--2{
+            @include post-ad;
+
+            article{
+                color: $white;
+
+                a{
+                    color: $white;
+                }
+
+                h3{
+                    font-size: xxx-large;
+                    margin: 0px;
+                }
+
+                .post-ad--text{
+                    font-size: x-large;
+                    padding: 10px 20px;
+                }
+
+                button{
+                    @include article_btn(200px, 49px, $white, $btn_text, 19px, $semi_bold);
+                    margin: 15px 0px;
+
+                    &:hover{
+                        color: $masthead_bg;
+                        transition: 0.3s ease-out;
+                    }
+                }
+
+                .post-ad--sign-in{
+                    font-size: large;
+                }
+            }
+        }
+    }
+}
+
+.page-advert{
+    text-align: center;
+    background-color: $advert_bg;
+    color: $white;
+    padding: 75px 0px;
+
+    .ship-date{
+        font-size: 15px;
+        font-weight: $semi_bold;
+        letter-spacing: 2px;
+
+        .ship{
+            &::before{
+                content: '• ';
+            }
+        }
+    }
+
+    .page-advert--article{
+        padding: 0px 50px;
+
+        h2{
+            font-size: xxx-large;
+            margin: 25px 500px;
+
+            a{
+                color: $white;
+            }
+        }
+        p{
+            font-size: 26px;
+            margin: 30px 320px;
+        }
+
+        button{
+            @include article_btn(370px, 60px, $white, $btn_text, 23px, $semi_bold);
+            margin: 30px auto;
+
+            &:hover{
+                color: $masthead_bg;
+            }
+        }
+    }
+
+    img{
+        width: 920px;
+    }
+}
+
+.community-links{
+    .community{
+        @include community;
+
+        .link-author{
+            display: flex;
+        }
+
+        .POTW{
+            grid-area: POTW;
+            padding: 40px 0px;
+            margin: 15px 0px 25px;
+
+            .POTW-avatar{
+                width: 241px;
+                padding: 55px;
+                margin: 0px 40px 0px 0px;
+            }
+            .about-POTW{
+                header{
+                    font-size: large;
+                    color: $news_text;
+                    letter-spacing: 2px;
+                    font-weight: $light;
+                }
+                p{
+                    font-size: x-large;
+                    color: $news_text;
+                }
+            }
+        }
+
+        .link{
+            margin: 50px auto;
+
+            .avatar{
+                padding: 0px 20px;
+                margin: 0px 30px 0px 0px;
+            }
+            .author{
+                font-size: x-large;
+                margin: 0px;
+                font-weight: $bold;
+                
+                a{
+                    color: $news_author;
+                }
+            }
+            h2{
+                font-size: xx-large;
+                margin: 0px;
+                color: $social_title;
+                cursor: pointer;
+
+                &:hover{
+                    color: $masthead_bg;
+                }
+            }
+            .link-text{
+                font-size: larger;
+                color: $news_text;
+
+                .link-date{
+                    font-size: 19px;
+                    font-weight: $light;
+                    color: $news_text;
+                }
+            }
+        }
+        .link-1{
+            grid-area: link-1;
+        }
+        .link-2{
+            grid-area: link-2;
+        }
+        .link-3{
+            grid-area: link-3;
+        }
+        .link-4{
+            grid-area: link-4;
+        }
+        .link-5{
+            grid-area: link-5;
+        }
+        .link-6{
+            grid-area: link-6;
+        }
+    }
+}
+
+.featured{
+    background-color: $masthead_bg;
+    padding: 50px 70px;
+    margin: 0px 0px 20px;
+    display: inline-flex;
+
+
+    article{
+        color: $white;
+        width: 70%;
+
+        .intro{
+            font-size: large;
+            font-weight: $semi_bold;
+        }
+
+        h2{
+            font-size: xxx-large;
+            margin: 0px;
+
+            a{
+                color: $white;
+            }
+        }
+        p{
+            font-size: x-large;
+            font-weight: $regular;
+        }
+
+        .jump-btn{
+            @include article_btn(412px, 72px, $white, $btn_text, 27px, $semi_bold);
+            margin: 20px auto;
+
+            &:hover{
+                color: $masthead_bg;
+            }
+        }
+    }
+    .featured-img{
+        @include featured_img;
+
+        &:hover{
+            transform: none;
+        }
+    }
+}
+
+.guides{
+    .smashing-guide{
+        @include guide;
+    }
+
+    .guide{
+        padding: 41px;
+        background-color: $white;
+        border-radius: 20px;
+
+        .intro{
+            margin: 0px;
+            font-size: large;
+            color: $news_title;
+        }
+        h1{
+            margin: 0px;
+            font-size: xxx-large;
+        }
+        p{
+            font-size: x-large;
+        }
+        button{
+            font-size: xx-large;
+            font-weight: $bold;
+            border: none;
+            border-radius: 20px;
+            margin: 32px 0px 0px;
+            padding: 20px 26px;
+            color: $white;
+            cursor: pointer;
+        }
+    }
+
+    .js{
+        a{
+            color: $js_color;
+        }
+        button{
+            background-color: $js_color;
+        }
+    }
+    .css{
+        a{
+            color: $css_color;
+        }
+        button{
+            background-color: $css_color;            
+        }
+    }
+    .web{
+        a{
+            color: $web_color;
+        }
+        button{
+            background-color: $web_color;            
+        }
+    }
+    .newsletter{
+        background: linear-gradient(to bottom, $advert_bg, $advert_bg_lower);
+        max-width: 650px;
+        grid-column: 1/-1;
+        justify-self: center;
+        border-radius: 20px;
+        padding: 32px 0px;
+
+        .news{
+            color: $white;
+            padding: 0px 41px;
+
+            header{
+                font-size: xxx-large;
+                font-weight: $bold;
+
+                a{
+                    color: $white;
+                }
+            }
+            .news-text{
+                font-size: larger;
+            }
+            .newsletter-btn{
+                display: inline-flex;
+                margin: 20px auto;
+
+                input{
+                    box-sizing: border-box;
+                    height: 67px;
+                    padding: 19px 25px;
+                    font-size: x-large;
+                }
+                input[type=email]{
+
+                    width: 360px;
+                    background-color: $white;
+                    font-style: italic;
+                    border: none;
+                    border-top-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                }
+                input[type=button]{
+                    width: 206.5px;
+                    background-color: $email_meow;
+                    font-weight: $bold;
+                    border: none;
+                    color: $white;
+                    border-top-right-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                }
+            }
+
+            .newsletter-ads{
+                text-align: center;
+                padding: 0px 70px;
+
+                p{
+                    font-size: large;
+                    background-color: $email_btn;
+                    padding: 9px 20px;
+                    border-radius: 15px;
+                }
+            }
+        }
+    }
+}
+
+.page-footer{
+    background-color: $masthead_bg;
+    text-align: center;
+    color: $white;
+    padding: 35px 0px 53px;
+
+    header{
+        font-size: large;
+        font-weight: $bold;
+        margin: 32px 0px;
+    }
+
+    .footer-links{
+        margin: 17px auto;
+        padding: 0px 30px;
+
+        li{
+            display: inline;
+            margin: 10px;
+            line-height: 1.5;
+
+            a{
+                color: $white;
+                font-size: x-large;
+                text-decoration: none;
+                
+
+                &::before{
+                    content: '•';
+                    color: $nav_bg;
+                    font-size: xx-large;
+                }
+            }
+        }
+    }
+    .footer-note{
+        line-height: 2;
+        padding: 20px 0px;
+
+        a{
+            color: $white;
+        }
+    }
+    .nav-contact--link{
+        margin: auto 500px;
+        padding: 10px 150px;
+
+        li{
+            display: inline;
+            margin: 15px;
+            line-height: 3;
+
+            a{
+                color: $white;
+            }
+        }
+    }
+}

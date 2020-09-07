@@ -1,0 +1,170 @@
+//Page Header
+@mixin masthead {
+    background: $masthead_bg 0% 0% no-repeat padding-box;
+    height: 6.8em;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    // grid-template-rows: repeat(1, 1fr);
+    grid-gap: 10px;
+    justify-items: center;
+    align-content: end;
+    grid-template: "logo page-nav search-input";
+}
+
+//Page Navigation
+@mixin  masthead_nav {
+    display: inline-flex;
+    grid-area: page-nav;
+}
+
+//Naviagtion links
+@mixin nav_li {
+    list-style: none;
+    margin: 0px 5px;
+    padding: 7px 0px;
+}
+@mixin nav_links {
+    text-decoration: none;
+    color: $white;
+    font-size: 24px;
+    font-weight: $bold;
+    padding: 10px;
+}
+
+//Search
+@mixin search_input {
+    box-sizing: content-box;
+    width: 276px;
+    height: 50px;
+    position: relative;
+    border: none;
+    margin: 0px 60px 0px 0px;
+    border-radius: 15px;
+    padding-left: 72px;
+    font-size: 24px;
+    font-weight: $bold;
+    color: #333;
+    background-image: url("asset/search.svg");
+    background-repeat: no-repeat;
+    background-position: 8%;
+    background-size: auto;
+}
+
+//Tag
+@mixin tag{
+    font-weight: $semi_bold;
+    background-image: linear-gradient($black, $black);
+    background-size: 30% 1px;
+    background-repeat: no-repeat;
+    transform-origin: left center;
+    background-position: center center;
+    text-align: right;
+    width: 28%;
+    letter-spacing: 4px;
+    transform: rotate(90deg);
+    position: relative;
+    bottom: 275px;
+    z-index: 12;
+    margin: 0px 0px 0px 30px;
+}
+
+//Top Articles
+@mixin top_article {
+    background-color: $top-article;
+    height: 100vh;
+}
+@mixin art{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+@mixin top_article_head {
+    text-align: center;
+    position: absolute;
+    margin: 19px 0px 0px 670px;
+    width: 30%;
+    display: grid;
+    justify-items: center;
+    z-index: 7;
+}
+@mixin article_btn($width, $height, $bg_color, $color, $font-size, $font-weight) {
+    width: $width;
+    height: $height;
+    box-sizing: content-box;
+    border: 1px $white solid;
+    background-color: $bg_color;
+    border-radius: 13px;
+    color: $color;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    cursor: pointer;
+}
+@mixin top_article_avatar {
+    background-color: $masthead_bg;
+    width: 98px;
+    height: 82px;
+    border-radius: 15px;
+    margin-right: 15px;
+    transform: rotate(-15deg);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+//Lastest Posts
+@mixin posts {
+    display: flex;
+    flex-wrap: wrap; 
+    padding: 10px 50px;
+}
+@mixin post-article{
+    display: grid;
+    align-content: space-between;
+    z-index: 10;
+    width: 29.875em;
+    margin: 20px 0px 50px 0px;
+}
+@mixin post-ad {
+    text-align: center;
+    background-color: $masthead_bg;
+    width: 49.125em;
+    max-width: 59.5em;
+    max-height: 43.313em;
+    padding: 30px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+
+//Community 
+@mixin community {
+    display: grid;
+    padding: 0px 100px;
+    grid-template-columns: repeat(2,  1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template: "POTW POTW"
+                    "link-1 link-2"
+                    "link-3 link-4"
+                    "link-5 link-6";
+}
+
+//Featured
+@mixin featured_img{
+    z-index: 15;
+    position: absolute;
+    right: 90px;
+    margin: -130px 0px 0px;
+    transform: rotate(-15deg);
+    transition: 0.5s ease-in;
+    cursor: pointer;
+}
+
+//Smashing Guides
+@mixin guide {
+    display: grid;
+    padding: 0px 70px;
+    margin: 38px 0px;
+    grid-gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+}
+
+//Page Footer
